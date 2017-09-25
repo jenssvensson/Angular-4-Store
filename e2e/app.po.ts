@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class TShirtStorePage {
+export class StorePage {
   navigateTo() {
     return browser.get('/');
   }

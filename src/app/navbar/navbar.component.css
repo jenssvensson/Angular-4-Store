@@ -1,0 +1,11 @@
+.cart-navbar {
+    display: block;
+    padding: 4px;
+    margin-top: 10px;
+    margin-right: 15px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border .2s ease-in-out;
+}

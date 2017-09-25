@@ -1,10 +1,10 @@
-import { TShirtStorePage } from './app.po';
+import { StorePage } from './app.po';
 
-describe('tshirt-store App', () => {
-  let page: TShirtStorePage;
+describe('Store App', () => {
+  let page: StorePage;
 
   beforeEach(() => {
-    page = new TShirtStorePage();
+    page = new StorePage();
   });
 
   it('should display welcome message', () => {
