@@ -3,8 +3,6 @@ import { ProductsService } from '../services/products.service';
 import { Subscription } from 'rxjs/Subscription';
 import { CartAction } from '../store/cart.actions';
 
-var output = console.log;
-
 @Component({
   selector: 'cart',
   templateUrl: './cart.component.html',

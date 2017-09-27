@@ -5,8 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Product } from '../models/Product';
 import { ProductsService } from '../services/products.service';
 import { CartAction } from '../store/cart.actions';
-
-var output = console.log;
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-products',
@@ -19,7 +18,7 @@ export class ProductsComponent implements OnInit {
   quantity: number;
   sortby = 'name';
 
-  constructor(private productService:ProductsService, private router:Router, private cartStore: CartAction) { }
+  constructor(private productService:ProductsService, private alertService: AlertService, private router:Router, private cartStore: CartAction) { }
 
   ngOnInit() {
     this.getProductData()
@@ -32,6 +31,7 @@ export class ProductsComponent implements OnInit {
     // When add to cart button is clicked
   addToCart(product) {
     this.cartStore.addToCart(product, this.quantity || 1)
+    this.alertService.success("Added " + product.name + " to cart.");
   }
 
   public sort() {

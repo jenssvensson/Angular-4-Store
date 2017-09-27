@@ -16,7 +16,8 @@ import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 
 import { ProductsService } from './services/products.service';
-import { SortPipe } from './common/sort.pipe';
+import { AlertComponent } from './alert/alert.component';
+import { AlertService } from './services/alert.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { SortPipe } from './common/sort.pipe';
     StoreFrontComponent,
     ProductsComponent,
     CartComponent,
-    SortPipe
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,7 @@ import { SortPipe } from './common/sort.pipe';
     FormsModule,
     StoreModule.provideStore(cartReducer)
   ],
-  providers: [ProductsService, CartAction],
+  providers: [ProductsService, CartAction, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
