@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { StoreModule } from '@ngrx/store';
 import { cartReducer } from './store/cart.reducer';
@@ -18,6 +19,10 @@ import { CartComponent } from './cart/cart.component';
 import { ProductsService } from './services/products.service';
 import { AlertComponent } from './alert/alert.component';
 import { AlertService } from './services/alert.service';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './services/authentication.service';
+
+import { AuthGuard } from './login/auth.guard';
 
 @NgModule({
   declarations: [
@@ -26,16 +31,24 @@ import { AlertService } from './services/alert.service';
     StoreFrontComponent,
     ProductsComponent,
     CartComponent,
-    AlertComponent
+    AlertComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BsDropdownModule.forRoot(),
     FormsModule,
+    HttpModule,
     StoreModule.provideStore(cartReducer)
   ],
-  providers: [ProductsService, CartAction, AlertService],
+  providers: [
+    ProductsService, 
+    CartAction, 
+    AlertService, 
+    AuthGuard,
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -38,7 +38,6 @@ export function cartReducer(state = initialState, action) {
     }
 
     default:
-      console.log(state);
       return state;
   }
 }
