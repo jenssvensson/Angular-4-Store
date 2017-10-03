@@ -1,0 +1,5 @@
+.color-indicator {
+  display: inline-block;
+  width: 50px;
+  border: 1px solid #ddd;
+}

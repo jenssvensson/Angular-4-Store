@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 import { Product } from '../models/Product';
-import { User } from '../models/user.model';
 import { ProductsService } from '../services/products.service';
 import { CartAction } from '../store/cart.actions';
 import { AlertService } from '../services/alert.service';
