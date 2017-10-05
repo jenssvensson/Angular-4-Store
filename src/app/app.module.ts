@@ -43,9 +43,9 @@ import { AuthGuard } from './login/auth.guard';
     StoreModule.provideStore(cartReducer)
   ],
   providers: [
-    ProductsService, 
-    CartAction, 
-    AlertService, 
+    ProductsService,
+    CartAction,
+    AlertService,
     AuthGuard,
     AuthenticationService
   ],

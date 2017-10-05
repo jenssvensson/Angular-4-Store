@@ -7,7 +7,7 @@ export class AuthenticationService {
 
   login(username: string, password: string) {
 
-    let user = {
+    const user = {
         id: 42,
         username: 'Jens',
         firstName: 'Jens',
@@ -15,7 +15,7 @@ export class AuthenticationService {
         token: 'fake-jwt-token'
     };
 
-    if (username == 'jens') {
+    if (username === 'jens') {
       localStorage.setItem('currentUser', JSON.stringify(user));
       return Promise.resolve(user);
     } else {
