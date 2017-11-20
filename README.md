@@ -1,5 +1,11 @@
 # Store
 
+## Description
+
+Experiment project where I explore Angular 2/4/5 concepts with sporadic frequence.
+
+Some feature included: Login system (use jens/jens as credentials), redux state management, alert service, shopping cart implementation.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
 ## Development server
