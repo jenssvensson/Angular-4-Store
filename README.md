@@ -2,7 +2,9 @@
 
 ## Description
 
-Experiment project where I explore Angular 2/4/5 concepts with sporadic frequence.
+Experiment project where I explore Angular 2/4/5 concepts with sporadic frequence. 
+
+The nature of the project makes it possible the it never has a status of finished or broken or anything like that.
 
 Some feature included: Login system (use jens/jens as credentials), redux state management, alert service, shopping cart implementation.
 
@@ -32,3 +34,13 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## TODO project ideas for further "things" to explore
+
+- Router animation
+- Other ways to handle statemanagement (redux is not good for a project this small)
+- Mockbackend
+- Explore e2e and update some unittests
+- Pagination
+- Bootstrap v4
+- toaster notifications
