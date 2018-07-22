@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductsService } from '../services/products.service';
 import { Subscription } from 'rxjs/Subscription';
 import { CartAction } from '../store/cart.actions';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'cart',
@@ -10,28 +10,52 @@ import { CartAction } from '../store/cart.actions';
 })
 export class CartComponent implements OnInit, OnDestroy {
 
+  private http: HttpClient;
   public cart = [];
   public totalPrice: number;
   public totalQuantity: number;
   public cartSubscription: Subscription;
 
-  constructor(private productService: ProductsService, private cartStore: CartAction) {}
+  constructor(private cartStore: CartAction) {}
 
   removeProduct(product) {
     this.cartStore.removeFromCart(product);
   }
 
   checkout() {
-    alert('Congrats you did your purchase!');
+
+    const headers = new Headers();
+        headers.append('Accept', 'application/json');
+        headers.append('Authorization', `hello`);
+        headers.append('Content-Type', 'application/json');
+
+    let payload = {
+      'order_id': '123', // TODO get next order from system backend
+      'purchase_currency': 'SEK',
+      'cart': {
+        'items': this.cart
+      },
+      'checkout_settings': {
+        'extended_cart': true
+      },
+      'require_shipping': true,
+      'express_shipping': true,
+      'hooks': {
+        'user_return_url_on_success': 'window.location.hostname' + '/success',
+        'user_return_url_on_fail': 'window.location.hostname' + '/failure'
+      }
+   };
+    this.http.post('https://api.hips.com/v1/orders', payload);
   }
 
   getTotalPrice() {
+    console.log(this.cart);
     const totalCost: Array<number> = [];
     const quantity: Array<number> = [];
     let intPrice: number;
     let intQuantity: number;
     this.cart.forEach((item, i) => {
-      intPrice = parseInt(item.price, 10);
+      intPrice = parseInt(item.unit_price, 10);
       intQuantity = parseInt(item.quantity, 10);
       totalCost.push(intPrice);
       quantity.push(intQuantity);

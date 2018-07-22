@@ -29,14 +29,14 @@ export class CartAction {
         product,
         quantity
       }
-    })
+    });
   }
 
   removeFromCart(payload) {
     this.store.dispatch({
       type: ActionTypes.REMOVE_FROM_CART,
       payload: payload
-    })
+    });
   }
 
 }

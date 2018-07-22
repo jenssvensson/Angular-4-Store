@@ -16,7 +16,7 @@ export function cartReducer(state = initialState, action) {
     case ActionTypes.ADD_TO_CART: {
       const addProduct = Object.assign({}, action.payload.product);
       addProduct.quantity = action.payload.quantity;
-      addProduct.price = (parseInt(addProduct.price, 10) * parseInt(addProduct.quantity, 10)).toFixed(2);
+      addProduct.unit_price = (parseInt(addProduct.unit_price, 10) * parseInt(addProduct.quantity, 10)).toFixed(2);
       return {
         ...state,
         products: [

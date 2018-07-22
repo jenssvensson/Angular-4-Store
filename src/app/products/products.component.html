@@ -1,10 +1,9 @@
 <div class="well well-sm clearfix">
-  <label for="sortby">Sort By:</label> 
+  <label style="padding-top: 7px;" for="sortby">Sort By:</label> 
   <div class="form-inline pull-right">
     <select [(ngModel)]="sortby" (change)="sort()" class="form-control" name="sortby">
       <option value="name">Name</option>
-      <option value="price">Price</option>
-      <option value="color">Color</option>
+      <option value="unit_price">Price</option>
     </select>
     
   </div>
@@ -14,14 +13,13 @@
   <div *ngFor="let product of products">
     <div class="col-xs-12 col-lg-4">
       <div class="thumbnail">
-        <img src="{{product.src}}" alt="" />
+        <img src="{{product.image_uri}}" alt="" />
         <div class="caption">
             <h4>{{product.name}}</h4>
-            <p>{{product.info}}</p>
-            <h5>Color: <div class="color-indicator" [ngStyle]="{'background-color' : product.color, 'color' : product.color}">{{product.color}}</div></h5>
+            <p>{{product.meta_data_1}}</p>
             <div class="row">
                 <div class="col-xs-12 col-md-6">
-                    <p class="lead">{{product.price | currency:'USD':true}}</p>
+                    <p class="lead">{{product.unit_price | currency:'SEK':false}}</p>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <a (click)="addToCart(product)" class="btn btn-primary">Add to cart</a>

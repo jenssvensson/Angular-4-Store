@@ -1,3 +1,5 @@
+import { FailureComponent } from './failure/failure.component';
+import { SuccessComponent } from './success/success.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -27,8 +29,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'success',
+    component: SuccessComponent
+  },
+  {
+    path: 'failure',
+    component: FailureComponent
   }
 ];
 

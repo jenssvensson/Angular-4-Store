@@ -23,6 +23,9 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 
 import { AuthGuard } from './login/auth.guard';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { SuccessComponent } from './success/success.component';
+import { FailureComponent } from './failure/failure.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { AuthGuard } from './login/auth.guard';
     ProductsComponent,
     CartComponent,
     AlertComponent,
-    LoginComponent
+    LoginComponent,
+    CheckoutComponent,
+    SuccessComponent,
+    FailureComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav style="border-radius: 0 !important;" class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" (click)="toggleState()" data-target="#myNavbar">
@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" routerLink="/">ngCart</a>
+      <a class="navbar-brand" routerLink="/">Battery Store</a>
     </div>
     <div class="navbar-collapse collapse" [ngClass]="{ 'in': isIn }" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -20,7 +20,7 @@
         </li>
         <li class="nav-item">
           <div class="cart-navbar">
-            <strong>Total Items: </strong><span class="badge">{{ totalQuantity }}</span> <strong>Total Price: ${{ totalPrice }}</strong>
+            <strong>Total Items: </strong><span class="badge">{{ totalQuantity }}</span> <strong>Total Price: {{ totalPrice }} SEK</strong>
           </div>
         </li>
       </ul>
